@@ -9,6 +9,9 @@ import { bindActionCreators } from 'redux';
   BookList()
 
   The BookList component becomes a Redux container using the react-redux connect() function as part of the export statement below. This gives the container access to the Redux application state.
+
+  - The onClick handler for each book <li> calls the selectBook action creator
+    and passes it the current book object
 */
 
 class BookList extends Component {
@@ -16,7 +19,12 @@ class BookList extends Component {
   renderList() {
     return this.props.books.map((book) => {
       return (
-        <li key={book.title} className="list-group-item">{book.title}</li>
+        <li
+          className="list-group-item"
+          key={book.title}
+          onClick={() => this.props.selectBook(book)}>
+          {book.title}
+        </li>
       );
     });
   }
@@ -40,7 +48,7 @@ class BookList extends Component {
 function mapStateToProps(state) {
   return {
     books: state.books
-  }
+  };
 }
 
 /*
@@ -53,7 +61,7 @@ function mapStateToProps(state) {
 */
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ selectBook: selectBook }, dispatch)
+  return bindActionCreators({ selectBook: selectBook }, dispatch);
 }
 
 /*
