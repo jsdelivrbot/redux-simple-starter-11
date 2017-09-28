@@ -2,9 +2,9 @@
 export default function() {
   // list of books is hard coded for now
   return[
-    { title: 'JavaScript: The Good Parts'},
-    { title: 'Harry Potter'},
-    { title: 'Dark Tower'},
-    { title: 'Eloquent Ruby'}
+    { title: 'JavaScript: The Good Parts', pages: 101},
+    { title: 'Harry Potter', pages: 39},
+    { title: 'Dark Tower', pages: 85},
+    { title: 'Eloquent Ruby', pages: 12}
   ]
 }

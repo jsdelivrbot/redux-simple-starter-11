@@ -6,6 +6,8 @@
   The reducer must return a value. Using ES6 syntax, state is set to 'null' if its initial value is 'undefined' when app first loads.
 
   NOTE: Reducer must not mutate state, just return a fresh object
+
+  Application triggers action when it first launches, so state is null, which needs to be handled by BookDetail
 */
 
 export default function (state = null, action) {
